@@ -779,10 +779,10 @@ def render_home():
 
     s1, s2, s3, s4 = st.columns(4)
     stats = [
-        ("04+", "Years building product at scale"),
-        ("MULTI", "Factory + operational environments"),
-        ("0→1", "New systems and workflows"),
-        ("∞", 'Problems caused by "one edge case"'),
+        ("4+ YEARS", "Product experience"),
+        ("0 → 1", "Products built & launched"),
+        ("5+", "Published research papers"),
+        ("3 WORLDS", "Software · Operations · AI"),
     ]
     for column, (value, label) in zip([s1, s2, s3, s4], stats):
         with column:
@@ -839,6 +839,38 @@ def render_home():
                 )
             
 
+    st.markdown(
+    '<div class="section-label">Currently building / side quest</div>',
+    unsafe_allow_html=True,
+    )
+
+    st.markdown(
+        """
+        <div class="mission-card">
+            <div class="mission-status">● LIVE / SIDE QUEST</div>
+            <div class="mission-icon">🤖</div>
+            <div class="mission-name">Decision Copilot</div>
+            <div class="mission-subtitle">
+                An experiment in making complex decisions more structured,
+                explainable, and a little less chaotic.
+            </div>
+            <br>
+            <div class="small-note">
+                BUILT WITH &nbsp; Python · Streamlit · AI
+                <br>
+                ROLE &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Designer · PM · Developer
+            </div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+    st.link_button(
+        "Launch Decision Copilot ↗",
+        "https://decision-copilot.streamlit.app/",
+        use_container_width=True,
+    )
+
     st.markdown('<div class="section-label">Skill tree</div>', unsafe_allow_html=True)
 
     skill_cols = st.columns(4)
@@ -848,7 +880,30 @@ def render_home():
             chips = "".join([f'<span class="chip">{skill}</span>' for skill in skills])
             st.markdown(chips, unsafe_allow_html=True)
 
-    st.markdown('<div class="section-label">Research archive / publications</div>', unsafe_allow_html=True)
+    st.markdown(
+    """
+    <div class="section-label">Before product...</div>
+
+    <div style="
+        max-width: 760px;
+        font-size: 1.25rem;
+        line-height: 1.7;
+        color: #c8d0d9;
+        margin-bottom: 2rem;
+    ">
+        I spent time researching how humans interact with automated systems —
+        particularly trust, preferences, and adaptive behavior.
+        <br><br>
+        Turns out, that's still a lot of what I do.
+    </div>
+    """,
+    unsafe_allow_html=True,
+    )
+
+    st.markdown(
+    '<div class="section-label">Research archive / publications</div>',
+    unsafe_allow_html=True,
+    )
 
     st.markdown(
         """
@@ -958,6 +1013,30 @@ def render_home():
     contact1, contact2 = st.columns([1, 2])
     with contact1:
         st.link_button("Connect on LinkedIn ↗", LINKEDIN_URL, use_container_width=True)
+
+    st.markdown(
+    '<div class="section-label">One last command</div>',
+    unsafe_allow_html=True,
+)
+
+    st.markdown(
+    """
+    <div class="terminal">
+        $ sudo hire vidya<br><br>
+
+        Checking dependencies...<br><br>
+
+        <span class="green">✓</span> Systems thinking<br>
+        <span class="green">✓</span> Product judgment<br>
+        <span class="green">✓</span> Can talk to engineers<br>
+        <span class="green">✓</span> Can talk to operations<br>
+        <span class="green">✓</span> Actually builds things<br><br>
+
+        <span class="blue">Installation recommended.</span>
+    </div>
+    """,
+    unsafe_allow_html=True,
+    )
 
     render_footer()
 
