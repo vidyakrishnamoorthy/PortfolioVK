@@ -156,6 +156,7 @@ PROJECTS = {
     },
     "Decision Copilot": {
         "icon": "🤖",
+        "external_url": "https://decision-copilot.streamlit.app/",
         "subtitle": "An AI side project for structured decision-making",
         "status": "SIDE QUEST",
         "problem": (
@@ -665,6 +666,12 @@ def render_project(project_name):
         unsafe_allow_html=True,
     )
 
+    if project.get("external_url"):
+      st.link_button(
+          "Launch Decision Copilot ↗",
+          project["external_url"],
+    )
+
     st.markdown(
         f"""
         <div class="case-block">
@@ -824,6 +831,13 @@ def render_home():
             ):
                 open_project(project_name)
                 st.rerun()
+            if project.get("external_url"):
+                st.link_button(
+                    "Launch live app ↗",
+                    project["external_url"],
+                    use_container_width=True,
+                )
+            
 
     st.markdown('<div class="section-label">Skill tree</div>', unsafe_allow_html=True)
 
@@ -944,10 +958,6 @@ def render_home():
     contact1, contact2 = st.columns([1, 2])
     with contact1:
         st.link_button("Connect on LinkedIn ↗", LINKEDIN_URL, use_container_width=True)
-    with contact2:
-        st.caption(
-            "Replace the placeholder LinkedIn and resume URLs at the top of app.py before publishing."
-        )
 
     render_footer()
 
