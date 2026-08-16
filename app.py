@@ -621,7 +621,7 @@ def render_topbar():
     st.markdown(
         f"""
         <div class="topbar">
-            <div class="brand">VIDYA_OS / PORTFOLIO</div>
+            <div class="brand">VIDYA / PORTFOLIO</div>
             <div class="online">● ONLINE &nbsp; · &nbsp; {completed}/4 MISSIONS EXPLORED</div>
         </div>
         """,
@@ -633,7 +633,7 @@ def render_footer():
     st.markdown(
         """
         <div class="footer-wrap">
-            VIDYA_OS v1.0 &nbsp; · &nbsp; BUILT WITH STREAMLIT &nbsp; · &nbsp;
+            VIDYA v1.0 &nbsp; · &nbsp; BUILT WITH STREAMLIT &nbsp; · &nbsp;
             REQUIREMENTS SUBJECT TO CHANGE WITHOUT WARNING
         </div>
         """,
